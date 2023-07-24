@@ -12,14 +12,14 @@ const ListMenu = () => {
       name: "Users",
       path: "/dashboard/users",
     },
-    {
-      name: "Entry and Exit",
-      path: "/dashboard/entryexit",
-    },
-    {
-      name: "Settings",
-      path: "/dashboard/settings",
-    },
+    // {
+    //   name: "Entry and Exit",
+    //   path: "/dashboard/entryexit",
+    // },
+    // {
+    //   name: "Settings",
+    //   path: "/dashboard/settings",
+    // },
   ];
   return (
     <div className="pt-3">
