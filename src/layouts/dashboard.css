@@ -1,0 +1,9 @@
+#ItemMenu{
+    @apply my-3 p-2 -ml-4 bg-gray-400 rounded-r cursor-pointer;
+}
+#ItemMenu:hover{
+    @apply bg-gray-800;
+}
+#ItemMenu:focus-within{
+    @apply outline-neutral-500 outline-1 bg-gray-800;
+}
