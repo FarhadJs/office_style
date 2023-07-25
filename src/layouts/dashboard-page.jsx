@@ -2,14 +2,11 @@ import "./dashboard.css";
 
 // List Menu Components
 import ListMenu from "./../components/list-menu";
-import { Route, Routes } from "react-router-dom";
-import Users from "../views/dashboard-pages/users";
-import EntryExit from "../views/dashboard-pages/entry-exit";
+import { Outlet } from "react-router-dom";
 
 // Icons
 import { MenuAlt1Icon } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
-import Default from "../views/dashboard-pages";
 const Dashboard = () => {
   const [TimeSystem, setTimeSystem] = useState(new Date());
   useEffect(() => {
@@ -20,20 +17,6 @@ const Dashboard = () => {
     // Cleanup the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
-  const children_routes = [
-    {
-      path: "/",
-      element: <Default />,
-    },
-    {
-      path: "/users",
-      element: <Users />,
-    },
-    {
-      path: "/entryexit",
-      element: <EntryExit />,
-    },
-  ];
   return (
     <div id="Dashboard" className="h-screen text-white bg-neutral-800">
       <nav className="fixed top-3 left-3 right-3 lg:left-auto lg:w-[81.5%] flex items-center justify-between p-2 bg-neutral-500 rounded">
@@ -52,11 +35,7 @@ const Dashboard = () => {
         id="DashBoard_Pages"
         className="bg-neutral-800 float-right w-full lg:w-10/12 p-4 pt-20 overflow-y-auto"
       >
-        <Routes>
-          {children_routes.map((el, i) => (
-            <Route key={i} path={el.path} element={el.element} />
-          ))}
-        </Routes>
+        <Outlet />
       </div>
     </div>
   );
