@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 // import HomePage from "./views/home-page/home-page.jsx";
 import About from "./views/about-page/about-page";

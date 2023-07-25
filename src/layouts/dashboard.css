@@ -1,9 +1,12 @@
-#ItemMenu{
-    @apply my-3 p-2 -ml-4 bg-gray-400 rounded-r cursor-pointer;
+.ItemMenu{
+    @apply w-full flex my-3 p-2 -ml-4 bg-neutral-400 rounded-r cursor-pointer outline outline-1 outline-transparent;
 }
-#ItemMenu:hover{
-    @apply bg-gray-800;
+.ItemMenu:hover{
+    @apply bg-neutral-800;
 }
-#ItemMenu:focus-within{
-    @apply outline-neutral-500 outline-1 bg-gray-800;
+.ItemMenu:focus-within{
+    @apply bg-neutral-800;
+}
+.ItemMenu:focus-visible{
+    @apply outline-neutral-300 bg-neutral-800;
 }

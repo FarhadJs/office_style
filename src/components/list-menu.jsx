@@ -1,8 +1,10 @@
-// import ItemMenu from "./item-menu";
+import ItemMenu from "./item-menu";
 
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const ListMenu = () => {
+  const location = useLocation();
   let Menu = [
     {
       name: "Dashboard",
@@ -12,21 +14,22 @@ const ListMenu = () => {
       name: "Users",
       path: "/dashboard/users",
     },
-    // {
-    //   name: "Entry and Exit",
-    //   path: "/dashboard/entryexit",
-    // },
+    {
+      name: "Entry and Exit",
+      path: "/dashboard/entryexit",
+    },
     // {
     //   name: "Settings",
     //   path: "/dashboard/settings",
     // },
   ];
+  useEffect(() => {
+    console.log(location.pathname);
+  }, [location.pathname]);
   return (
     <div className="pt-3">
       {Menu.map((usr, i) => (
-        <Link key={i} to={usr.path}>
-          <div id="ItemMenu">{usr.name}</div>
-        </Link>
+        <ItemMenu key={i} Items={usr} />
       ))}
       {/* <ItemMenu ItemMenu={users} /> */}
     </div>
