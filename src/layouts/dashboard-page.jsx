@@ -9,16 +9,22 @@ import EntryExit from "../views/dashboard-pages/entry-exit";
 // Icons
 import { MenuAlt1Icon } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
+import Default from "../views/dashboard-pages";
 const Dashboard = () => {
   const [TimeSystem, setTimeSystem] = useState(new Date());
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTimeSystem(new Date());
     }, 500);
+
     // Cleanup the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
   const children_routes = [
+    {
+      path: "/",
+      element: <Default />,
+    },
     {
       path: "/users",
       element: <Users />,
